@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Time</title>
+  <script>
+    function updateTime() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+
+      var timeString = hours;
+      document.getElementById("time").innerHTML = timeString;
+
+      // Send the current hour to the other website by updating the URL
+      window.location.href = "path/to/receiving-page.html?hour=" + hours;
+    }
+
+    setInterval(updateTime, 1000); // Update every second
+  </script>
+</head>
+<body>
+  <h1></h1>
+  <p id="time"></p>
+</body>
+</html>
